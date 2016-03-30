@@ -1,0 +1,16 @@
+<h1><%=@lawyer.email%></h1>
+<%if lawyer_signed_in? %>
+<h2>Pending confirmation requests</h2>
+<%i=1%>	
+<% while i<=Booking.count%>
+<br/>
+<% if Booking.find(i).lawyerid==params[:id].to_i && Booking.find(i).request!=true%>
+ <p><%= User.find(Booking.find(i).userid).email%></p>
+<a href="/approve/<%=Booking.find(i).userid%>">Confirm Booking</a>
+<%end%>
+<%i+=1%>
+<%end%>
+<%end%>
+<%if !lawyer_signed_in?%>
+<a href="/lawyers/book/<%=params[:id]%>">Book</a>
+<%end%>

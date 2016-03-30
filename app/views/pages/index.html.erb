@@ -1,0 +1,29 @@
+<%if user_signed_in?%>
+<h2>List of available lawyers</h2>
+<%i=1%>
+<% while i<=Lawyer.count %>
+<%=Lawyer.find(i).email%>
+<a href="/lawyers/<%=i%>">View Lawyer</a>
+<br />
+<%i+=1%>
+<%end%>
+<%else%>
+<%if lawyer_signed_in? %>
+<h2>Your current bookings:</h2>
+<%i=1%>	
+<% while i<=Booking.count%>
+<% if Booking.find(i).lawyerid==current_lawyer.id && Booking.find(i).request==true%>
+ <p><%= User.find(Booking.find(i).userid).email%></p>
+<%end%>
+<%i+=1%>
+<%end%>
+<h2>Booking requests:</h2>
+<%i=1%>	
+<% while i<=Booking.count%>
+<% if Booking.find(i).lawyerid==current_lawyer.id && Booking.find(i).request==nil%>
+ <p><%= User.find(Booking.find(i).userid).email%></p>
+<%end%>
+<%i+=1%>
+<%end%>
+<%end%>
+<%end%>

@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
   devise_for :lawyers
   devise_for :users
   get 'lawyers/:id' => 'lawyer#show'
+  get 'lawyers/book/:id' => 'lawyer#book'
   get 'users/:id' => 'user#show'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  get 'approve/:id' => 'lawyer#confirm'
   # You can have the root of your site routed with "root"
-  root 'welcome#index'
-
+  root 'pages#index'
+  get 'lawyers/lawyer'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

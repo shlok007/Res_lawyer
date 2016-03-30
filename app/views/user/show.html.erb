@@ -1,0 +1,8 @@
+<h2>Your Lawyer</h2>
+<%i=1%>	
+<% while i<=Booking.count%>
+<% if Booking.find(i).userid==current_user.id && Booking.find(i).request==true%>
+ <p><%= Lawyer.find(Booking.find(i).lawyerid).email%></p>
+<%end%>
+<%i+=1%>
+<%end%>
