@@ -1,5 +1,6 @@
 <%if user_signed_in?%>
-<h2>List of available lawyers</h2>
+<h3> <a href="users/<%=current_user.id%>">Your Current lawyers</a>
+<h2>List of available lawyers</h2><br/>
 <%i=1%>
 <% while i<=Lawyer.count %>
 <%=Lawyer.find(i).email%>
@@ -9,6 +10,7 @@
 <%end%>
 <%else%>
 <%if lawyer_signed_in? %>
+<h3>Approve your request <a href="/lawyers/<%=current_lawyer.id%>">My Profile</a></h3>
 <h2>Your current bookings:</h2>
 <%i=1%>	
 <% while i<=Booking.count%>

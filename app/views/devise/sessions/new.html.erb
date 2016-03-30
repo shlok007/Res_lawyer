@@ -1,3 +1,11 @@
+  <%if request.original_fullpath == "/users/sign_in"%>
+  <h2>Client Sign In</h2>
+<p><b>Are you a lawyer? <a href="/lawyers/sign_in"> Sign In here</a></b></p>
+<%end%>
+<%if request.original_fullpath == "/lawyers/sign_in"%>
+  <h2>Lawyer Sign In</h2>
+<p><b>Are you a Client? <a href="/users/sign_in"> Sign In here</a></b></p>
+<%end%>
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   devise_for :lawyers
   devise_for :users
-  get 'lawyers/:id' => 'lawyer#show'
+  get 'lawyers/:id' => 'lawyer#show', as: :profile
   get 'lawyers/book/:id' => 'lawyer#book'
   get 'users/:id' => 'user#show'
   # The priority is based upon order of creation: first created -> highest priority.

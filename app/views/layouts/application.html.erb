@@ -8,7 +8,7 @@
 </head>
 <body>
 <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+       <p class="alert"><b><%= alert %></b></p>
 <%if user_signed_in?%>
 You are signed in as <%=current_user.email%>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
