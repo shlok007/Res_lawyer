@@ -5,5 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-User.create([{email:"a@a.com",password:"aaaaaaaa"},{email:"b@b.com",password:"aaaaaaaa"}])
-Lawyer.create([{email:"q@q.com",password:"aaaaaaaa"},{email:"w@w.com",password:"aaaaaaaa"}])
+User.create([{email:"user1@gmail.com",password:"aaaaaaaa"},{email:"user2@gmail.com",password:"aaaaaaaa"},{email:"user3@gmail.com",password:"aaaaaaaa"},{email:"user4@gmail.com",password:"aaaaaaaa"},{email:"user5@gmail.com",password:"aaaaaaaa"},{email:"user6@gmail.com",password:"aaaaaaaa"},{email:"user7@gmail.com",password:"aaaaaaaa"},{email:"user8@gmail.com.com",password:"aaaaaaaa"}])
+Lawyer.create([{email:"lawyer1@gmail.com",password:"aaaaaaaa"},{email:"lawyer2@gmail.com",password:"aaaaaaaa"},{email:"lawyer3@gmail.com",password:"aaaaaaaa"},{email:"lawyer4@gmail.com",password:"aaaaaaaa"},{email:"lawyer5@gmail.com",password:"aaaaaaaa"},{email:"lawyer6@gmail.com",password:"aaaaaaaa"},{email:"lawyer7@gmail.com",password:"aaaaaaaa"},{email:"lawyer8@gmail.com",password:"aaaaaaaa"},{email:"lawyer9@gmail.com",password:"aaaaaaaa"}])
