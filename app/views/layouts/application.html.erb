@@ -2,26 +2,27 @@
 <html>
 <head>
   <title>Legistify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-       <p class="alert"><b><%= alert %></b></p>
-<%if user_signed_in?%>
-You are signed in as <%=current_user.email%>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  <br/>
-  <br/>
-<%else%>
-<%if lawyer_signed_in?%>
-You are signed in as <%=current_lawyer.email%>
-  <%= link_to('Logout', destroy_lawyer_session_path, :method => :delete) %>
-  <br/>
-  <br/>
-  <%end%>
-  <%end%>
+
+  <%= render 'shared/navbar' %>
+
+  <!-- Notice -->
+  <div class="alert alert-success alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= notice %>
+  </div>
+  <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= alert %>
+  </div>
+
+  <!-- before yield -->
 <%= yield %>
 </body>
 </html>
